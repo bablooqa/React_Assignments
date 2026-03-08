@@ -1,109 +1,135 @@
-# React Router Medium-Level Assignment (20 Questions)
+# React.js Mini Project Assignment
 
-## Instructions
-- Create separate components for each scenario.
-- Use `BrowserRouter`, `Routes`, `Route`, `Link`, `useNavigate`, and `useParams`.
-- Follow component-based architecture.
-- Use functional components only.
+## Project Title: Task Manager Web App
 
----
+## Objective
+The goal of this assignment is to build a **Task Manager Application using React.js** where users can create, update, delete, and manage their daily tasks.
 
-## Section A: Component-Based Routing (1–8)
-
-1. Create a `Home` component and set it as the default route (`/`).
-
-2. Create an `About` component and configure routing so it loads at `/about`.
-
-3. Create a `Navbar` component with `Link` for:
-   - Home
-   - About
-   - Contact
-
-4. Create a `Contact` component and route it using React Router.
-
-5. Create a `Layout` component that contains a navbar and an `<Outlet />` for child routes.
-
-6. Implement nested routing for:
-   - `/dashboard`
-   - `/dashboard/profile`
-   - `/dashboard/settings`
-
-7. Create separate components for `Profile` and `Settings` under `Dashboard`.
-
-8. Add a wildcard route to display a `PageNotFound` component.
+This project will help students practice:
+- React Components
+- React Hooks (useState, useEffect)
+- Props and State management
+- Form handling
+- Conditional rendering
+- Local storage usage
+- Basic UI styling
 
 ---
 
-## Section B: Scenario-Based Navigation (9–14)
+# Project Description
 
-9. Create a `Login` component with a button that navigates to `/dashboard` using `useNavigate`.
+You need to build a **Task Manager Web Application** where users can:
 
-10. After successful login, redirect the user automatically to the Dashboard page.
+- Add new tasks
+- Edit existing tasks
+- Mark tasks as completed
+- Delete tasks
+- Filter tasks (All / Completed / Pending)
 
-11. Create a `Logout` button that navigates the user back to the Home page.
-
-12. Disable direct access to `/dashboard` unless the user is logged in (basic logic only).
-
-13. Create a button in the Dashboard that navigates back to the previous page.
-
-14. Navigate to a route after submitting a form using `useNavigate`.
+All tasks should be **saved in browser local storage** so that tasks remain after page refresh.
 
 ---
 
-## Section C: Dynamic Routing with useParams (15–20)
+# Required Features
 
-15. Create a `Products` component that displays a list of products.
+## 1. Add New Task
 
-16. When clicking a product, navigate to `/product/:id`.
+Users should be able to add a task using an input form.
 
-17. Create a `ProductDetails` component and fetch the product ID using `useParams`.
+Task fields:
 
-18. Display product details based on the dynamic `id`.
+- Task Title
+- Task Description
+- Due Date
 
-19. Handle an invalid product ID gracefully.
+Example:
 
-20. Add a `Back to Products` button using `useNavigate`.
+Title: Complete React Assignment  
+Description: Finish React mini project  
+Due Date: 20 June 2026
 
----
-
-## Bonus Challenge (Optional)
-
-- Create a `ProtectedRoute` component.
-- Redirect unauthenticated users to `/login`.
-- Maintain login state using `useState`.
+When user clicks **Add Task**, the task should be added to the list.
 
 ---
 
-## Folder Structure Suggestion
-src/
-│── components/
-│ ├── Navbar.jsx
-│ ├── Layout.jsx
-│
-│── pages/
-│ ├── Home.jsx
-│ ├── About.jsx
-│ ├── Contact.jsx
-│ ├── Login.jsx
-│ ├── Dashboard.jsx
-│ ├── Profile.jsx
-│ ├── Settings.jsx
-│ ├── Products.jsx
-│ ├── ProductDetails.jsx
-│ ├── PageNotFound.jsx
-│
-│── App.jsx
-│── main.jsx
+# 2. Display Task List
 
+All tasks should be displayed in a list or card format.
+
+Each task card should display:
+
+- Task Title
+- Description
+- Due Date
+- Status (Completed / Pending)
+
+Example:
+
+Task: Complete React Assignment  
+Description: Finish React mini project  
+Due Date: 20 June  
+Status: Pending
 
 ---
 
-## Evaluation Criteria
-- Proper routing setup
-- Clean component structure
-- Correct usage of hooks
-- Navigation works as expected
-- Code readability
+# 3. Mark Task as Completed
 
+Each task should have a **checkbox or button** to mark it as completed.
 
+When completed:
 
+- Task status should update
+- UI should visually show completion (like strikethrough text)
+
+---
+
+# 4. Edit Task
+
+User should be able to edit task details.
+
+Workflow:
+
+1. Click **Edit button**
+2. Open edit form
+3. Update task information
+4. Save changes
+
+---
+
+# 5. Delete Task
+
+Each task should have a **Delete button**.
+
+When clicked:
+
+- Remove task from the list
+- Update local storage
+
+---
+
+# 6. Task Filtering
+
+Add filter buttons:
+
+- All Tasks
+- Completed Tasks
+- Pending Tasks
+
+Behavior:
+
+| Filter | Result |
+|------|------|
+| All | Show all tasks |
+| Completed | Show completed tasks |
+| Pending | Show incomplete tasks |
+
+---
+
+# 7. Local Storage Integration
+
+Tasks should be stored in **browser local storage**.
+
+Example:
+
+```javascript
+localStorage.setItem("tasks", JSON.stringify(tasks))
